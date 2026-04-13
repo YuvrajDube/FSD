@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MongoDB CRUD Dashboard</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Express + MongoDB</p>
+          <h1>Student CRUD Dashboard</h1>
+          <p class="lead">
+            Create, update, view, and delete student records from a clean browser interface.
+          </p>
+        </div>
+        <div class="hero-card">
+          <span class="dot"></span>
+          <div>
+            <strong>API</strong>
+            <p>Connected to <code>/api/students</code></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <form id="student-form" class="form-card">
+          <input type="hidden" id="student-id" />
+          <div class="form-grid">
+            <label>
+              Name
+              <input id="name" type="text" placeholder="Aarav Sharma" required />
+            </label>
+            <label>
+              Email
+              <input id="email" type="email" placeholder="aarav@example.com" required />
+            </label>
+            <label>
+              Age
+              <input id="age" type="number" min="1" placeholder="20" required />
+            </label>
+            <label>
+              Course
+              <input id="course" type="text" placeholder="Computer Science" required />
+            </label>
+          </div>
+          <div class="actions">
+            <button type="submit" class="primary">Save Student</button>
+            <button type="button" id="cancel-edit" class="ghost hidden">Cancel Edit</button>
+          </div>
+          <p id="status" class="status"></p>
+        </form>
+
+        <aside class="panel-card">
+          <div class="panel-header">
+            <h2>Students</h2>
+            <button id="refresh-btn" class="ghost">Refresh</button>
+          </div>
+          <div id="students-list" class="list"></div>
+        </aside>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
